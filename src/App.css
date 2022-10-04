@@ -1,38 +1,177 @@
-.App {
+main {
+  width: 100%;
+  height: 100%;
+  background-color: #272343;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+  position: relative;
+}
+
+.appContainer {
+  width: 40%;
+  height: auto;
+  background-color: white;
+  border-end-end-radius: 5px;
+  padding: 40px 48px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.appProgress{
+  background-color: #88c7c7;
+  height: 5px;
+  width: 40%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.appProgressPorc{
+  background-color: #34a3a3;
+  width: 0;
+  height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.appCard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.appCard .appTitle {
+  font-size: 24px;
+  width: auto;
+}
+
+.appBody{
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  border: 1px solid #cecece;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.appBody > div {
+  display: flex;
+  width: 100%; 
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.appButtons{
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  }
+
+.appButtons div {
+  display: flex;
+  align-items: center;
+  border: 1px solid #34a3a3;
+  border-radius: 5px;  
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 2px;
+  align-items: center;
+  position: relative;
+}
+
+
+.appButtons input[type='radio']:checked + label{
+  background-color: #34a3a3;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.appButtons input[type='radio']{
+  position: absolute;
+  cursor: pointer;
+  margin: 0;
+  margin-left:6px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.appButtons input[type='radio']:active {
+  transform: translateY(-2px);
+}
+
+.appButtons label{
+  padding: 8px 24px 8px 26px;
+  width: 100%;
+  color: #34a3a3;
+}
+
+
+dialog {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: grid;
+  place-content: center;
+}
+
+
+dialog div{
+  border-radius: 8px;
+  border:1px solid rgba(0, 0, 0, 0.158);
+  background-color: white;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #34a3a3;
+}
+
+dialog button{
+  background-color: #34a3a3;
+  padding: 8px 24px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  margin-top: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+dialog button:hover{
+  background-color: #298080;  
+}
+
+@media screen and (max-width:767px) {
+  main{
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+  .appContainer{
+    width: 100%;
+  }
+
+  .appProgress{
+    width: 100%;
+  }
+
+  .appButtons div{
+    width: 100%;
+  }
+  
+}
+
+@media screen and (min-width: 767px)  and (max-width: 1023px){
+  main{
+    padding: 50px;
+  }
+  .appContainer{
+    width: 100%;
+  }
+
+  .appProgress{
+    width: 100%;
+  }
+
+  .appButtons div{
+    width: 80%;
   }
 }
